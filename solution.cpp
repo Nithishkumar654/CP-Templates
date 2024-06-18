@@ -12,18 +12,18 @@ template<class T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_ord
 // find_by_order - returns iterator, order_of_key, lower_bound, upper_bound - returns iterator
 // .insert(x) .erase(x)
 
-#define int             long long
+#define ll             long long
 #define nl              cout << "\n";
 #define endl            "\n"
-#define vi              vector<int>
+#define vi              vector<ll>
 #define yes             cout << "YES"
 #define no              cout << "NO"
-#define vpi             vector<pair<int, int>>
+#define vpi             vector<pair<ll, ll>>
 #define pb              push_back
 #define ppb             pop_back
 #define read(a)         for(auto &x : a) cin >> x;
 #define u_m             unordered_map
-#define pii             pair<int, int>
+#define pii             pair<ll, ll>
 #define F               first
 #define S               second
 #define sqrt(x)         sqrtl(x)
@@ -32,7 +32,7 @@ template<class T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_ord
 #define M               1000000007
 #define M1              1000000009
 #define mod             998244353
-#define sz(x)           (int)(x).size()
+#define sz(x)           (ll)(x).size()
 #define all(x)          (x).begin(), (x).end()
 
 #ifndef ONLINE_JUDGE
@@ -57,17 +57,17 @@ template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_pr
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 template<class T> void rev(T &v){reverse(v.begin(), v.end());}
 
-int power(int a, int b, int m){ if(b == 0) return 1; int ans = power(a, b/2, m); ans = (ans * ans)%m; if(b&1) return (ans * a)%m; return ans;}
-int inv(int a, int m){ a %= m; return power(a, m - 2, m);}
-int add(int a, int b, int m){a %= m; b %= m; return (((a + b)%m) + m)%m;}
-int sub(int a, int b, int m){a %= m; b %= m; return (((a - b)%m) + m)%m;}
-int mul(int a, int b, int m){a %= m; b %= m; return (((a * b)%m) + m)%m;}
-int div(int a, int b, int m){a %= m; b %= m; return (mul(a, inv(b, m), m) + m) %m;}
-int nCr(int n, int r, int m, vector<int>& fact){return mul(fact[n], inv(mul(fact[r], fact[n - r], m), m), m);}
+ll power(ll a, ll b, ll m){ if(b == 0) return 1; ll ans = power(a, b/2, m); ans = (ans * ans)%m; if(b&1) return (ans * a)%m; return ans;}
+ll inv(ll a, ll m){ a %= m; return power(a, m - 2, m);}
+ll add(ll a, ll b, ll m){a %= m; b %= m; return (((a + b)%m) + m)%m;}
+ll sub(ll a, ll b, ll m){a %= m; b %= m; return (((a - b)%m) + m)%m;}
+ll mul(ll a, ll b, ll m){a %= m; b %= m; return (((a * b)%m) + m)%m;}
+ll div(ll a, ll b, ll m){a %= m; b %= m; return (mul(a, inv(b, m), m) + m) %m;}
+ll nCr(ll n, ll r, ll m, vector<ll>& fact){return mul(fact[n], inv(mul(fact[r], fact[n - r], m), m), m);}
 
 struct custom_hash {static uint64_t splitmix64(uint64_t x) { x += 0x9e3779b97f4a7c15; x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9; x = (x ^ (x >> 27)) * 0x94d049bb133111eb; return x ^ (x >> 31);} size_t operator()(uint64_t x) const { static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count(); return splitmix64(x + FIXED_RANDOM);}};
 
-const int N = 2e5 + 10;
+const ll N = 2e5 + 10;
 
 // http://xorshift.di.unimi.it/splitmix64.c
 
@@ -78,7 +78,7 @@ void solution() {
     
 }
 
-signed main() { 
+int main() { 
     ios_base::sync_with_stdio(false); 
     cin.tie(NULL); cout.tie(NULL);  
     #ifndef ONLINE_JUDGE 
@@ -86,7 +86,7 @@ signed main() {
         freopen("output.txt", "w", stdout); 
         freopen("error.txt", "w", stderr); 
     #endif 
-    int t = 1;if(test_cases) cin >> t; int tc = 1;
+    ll t = 1;if(test_cases) cin >> t; ll tc = 1;
     while(t--){
         //cout << "Test Case #" << tc << ":\n"; //kickstart 
         //cout << "Case " << tc << ": ";  //icpc

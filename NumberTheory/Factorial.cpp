@@ -1,3 +1,4 @@
+#define M 1000000007
 const int N = 2e5 + 10;
 vector<int> fact(N, 1);
 

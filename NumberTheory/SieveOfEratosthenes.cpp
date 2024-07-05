@@ -9,9 +9,9 @@ void sieve(){
     for(int i = 2; i * i <= N; i++){
         if(prime[i] == true){
             smallestPrime[i] = i;
-            for(int j = i * i; j <= N; j += i){
+            for(int j = 2 * i; j <= N; j += i){
                 prime[j] = false;
-                if(smallestPrime[j] != -1) smallestPrime[j] = i;
+                if(smallestPrime[j] == -1) smallestPrime[j] = i;
             }
         }
     }

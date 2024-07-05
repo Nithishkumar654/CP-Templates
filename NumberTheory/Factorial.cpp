@@ -1,6 +1,8 @@
-#define M 1000000007
+#define M  1000000007
+#define ll long long
 const int N = 2e5 + 10;
-vector<int> fact(N, 1);
+
+vector<ll> fact(N, 1);
 
 void factorial(){
     fact[0] = fact[1] = 1;

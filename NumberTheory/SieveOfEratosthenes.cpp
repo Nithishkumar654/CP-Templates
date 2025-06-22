@@ -3,6 +3,7 @@
 const int N = 2e5 + 10;
 vector<bool> prime(N + 1, true);
 vector<ll> smallestPrime(N, -1);
+vector<int> primes;
 
 void sieve(){
     prime[0] = prime[1] = false;
@@ -15,4 +16,6 @@ void sieve(){
             }
         }
     }
+    for(int i = 2; i <= N; i++)
+        if(prime[i]) primes.push_back(i);
 }

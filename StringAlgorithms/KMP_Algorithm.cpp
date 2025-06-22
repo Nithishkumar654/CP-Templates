@@ -1,3 +1,6 @@
+// prefix function for this string is defined as an array pi of length n, 
+// where pi[i] is the length of the longest proper prefix of the substring s[0...i] which is also a suffix of this substring
+
 #define ll     long long
 #define sz(x)  (ll)(x).size()
 

@@ -15,7 +15,7 @@ class SegmentTree{
     lazy[i] = -1;
   }
  
-  int combine(int a, int b){
+  ll combine(ll a, ll b){
     return a + b;
   }
   
@@ -37,7 +37,7 @@ class SegmentTree{
     segTree[i] = combine(segTree[2*i + 1], segTree[2*i + 2]);
   }
  
-  int query(int i, int low, int high, int l, int r){
+  ll query(int i, int low, int high, int l, int r){
     
     push(i, low, high);
  
@@ -45,8 +45,8 @@ class SegmentTree{
     if(low >= l and high <= r) return segTree[i];
  
     int mid = (low + high) >> 1;
-    int left = query(2*i + 1, low, mid, l, r);
-    int right = query(2*i + 2, mid + 1, high, l, r);
+    ll left = query(2*i + 1, low, mid, l, r);
+    ll right = query(2*i + 2, mid + 1, high, l, r);
     
     return combine(left, right);  
   }
@@ -65,7 +65,7 @@ class SegmentTree{
     update(0, 0, n - 1, val, l, r);
   }
  
-  int query(int l, int r){
+  ll query(int l, int r){
     return query(0, 0, n - 1, l, r);
   }
 };

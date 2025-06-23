@@ -1,24 +1,24 @@
 // https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
 class Solution{
-	void dfs(int node, vector<vector<int>>& graph, vector<bool>& vis){
+  void dfs(int node, vector<vector<int>>& graph, vector<bool>& vis){
     if(vis[node]) return;
     vis[node] = true;
     for(int child : graph[node]){
       dfs(child, graph, vis);
     }
-	}
+  }
 	
-	void dfs(int node, vector<vector<int>>& graph, vector<bool>& vis, stack<int>& st){
-   if(vis[node]) return;
+  void dfs(int node, vector<vector<int>>& graph, vector<bool>& vis, stack<int>& st){
+    if(vis[node]) return;
     vis[node] = true;
     for(int child : graph[node]){
       dfs(child, graph, vis, st);
     }
     st.push(node);
-	}
+  }
 	
-	public:
-	//Function to find number of strongly connected components in the graph.
+  public:
+  //Function to find number of strongly connected components in the graph.
   int kosaraju(int V, vector<vector<int>>& adj){
     stack<int> st;
     vector<bool> vis(V, false);

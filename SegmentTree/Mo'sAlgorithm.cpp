@@ -9,19 +9,11 @@ struct Query {
   }
 };
 
-// 
-
-void add(int idx) {
-  // add index operation
-}
-
-void rem(int idx) {
-  // remove index operation
-}
-
-ll get_answer() {
-  
-}
+// add index operation
+void add(int idx) {}
+// remove index operation
+void rem(int idx) {}
+ll get_answer() {}
 
 vector<ll> MoAlgorithm (vector<Query>& Queries) {
   vector<ll> answers(Queries.size());

@@ -18,7 +18,7 @@ class FenwickTree2D {
     for (int i = x; i >= 0; i = (i & (i + 1)) - 1)
       for (int j = y; j >= 0; j = (j & (j + 1)) - 1)
         ret += tree[i][j];
-      return ret;
+    return ret;
   }
 
   // point increment (0-based indexing)

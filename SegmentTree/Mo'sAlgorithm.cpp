@@ -23,26 +23,33 @@ ll get_answer() {
   
 }
 
-ll answers[Queries.size()];
-int cur_l = 0;
-int cur_r = -1;
-// invariant: data structure will always reflect the range [cur_l, cur_r]
-for (Query q : Queries) {
-  while (cur_l > q.l) {
-    cur_l--;
-    add(cur_l);
+vector<ll> MoAlgorithm (vector<Query>& Queries) {
+  vector<ll> answers(Queries.size());
+  sort(Queries.begin(), Queries.end());
+
+  // TODO: INITIALISE DATA STRUCTURE
+
+  int cur_l = 0;
+  int cur_r = -1;
+  // invariant: data structure will always reflect the range [cur_l, cur_r]
+  for (Query q : Queries) {
+    while (cur_l > q.l) {
+      cur_l--;
+      add(cur_l);
+    }
+    while (cur_r < q.r) {
+      cur_r++;
+      add(cur_r);
+    }
+    while (cur_l < q.l) {
+      rem(cur_l);
+      cur_l++;
+    }
+    while (cur_r > q.r) {
+      rem(cur_r);
+      cur_r--;
+    }
+    answers[q.idx] = get_answer();
   }
-  while (cur_r < q.r) {
-    cur_r++;
-    add(cur_r);
-  }
-  while (cur_l < q.l) {
-    rem(cur_l);
-    cur_l++;
-  }
-  while (cur_r > q.r) {
-    rem(cur_r);
-    cur_r--;
-  }
-  answers[q.idx] = get_answer();
+  return answers;
 }

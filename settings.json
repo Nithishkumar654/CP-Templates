@@ -1,0 +1,132 @@
+{
+  "editor.fontFamily": "Menlo",
+  "editor.fontSize": 13,
+  "cmake.additionalCompilerSearchDirs": [
+    "C:/msys64/mingw32/bin",
+    "C:/msys64/mingw64/bin",
+    "C:/msys64/clang32/bin",
+    "C:/msys64/clang64/bin",
+    "C:/msys64/clangarm64/bin",
+    "C:/msys64/ucrt64/bin"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "C_Cpp.vcFormat.indent.accessSpecifiers": true,
+  "C_Cpp.vcFormat.indent.braces": true,
+  "C_Cpp.vcFormat.newLine.beforeElse": false,
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.block": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.function": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.lambda": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine",
+  "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+  "C_Cpp.vcFormat.space.afterCastCloseParenthesis": true,
+  "C_Cpp.vcFormat.space.beforeFunctionOpenParenthesis": "insert",
+  "C_Cpp.vcFormat.space.beforeLambdaOpenParenthesis": true,
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "editor.tabSize": 2,
+  "editor.indentSize": 2,
+  "C_Cpp.copilotHover": "disabled",
+  "chat.disableAIFeatures": true,
+  "[snippets]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.colorTheme": "Dark+",
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && java $fileNameWithoutExt < input.txt > output.txt 2> error.txt",
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "zig": "zig run",
+    "cpp": "cd $dir && g++ -std=c++20 -O3 -DLOCAL $fileName -o $fileNameWithoutExt && $fileNameWithoutExt < input.txt > output.txt 2> error.txt",
+    // "cpp": "cd $dir && $dir$fileNameWithoutExt < input.txt > output.txt 2> error.txt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "cd $dir && py -3 $fileName < input.txt > output.txt 2> error.txt",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runghc",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName",
+    "mojo": "mojo run",
+    "erlang": "escript",
+    "spwn": "spwn build",
+    "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
+    "gleam": "gleam run -m $fileNameWithoutExt"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "emeraldwalk.runonsave": {
+    "autoShowOutputPanel": "silent",
+    "commands": [
+      {
+        "match": "\\.cpp$",
+        "cmd": "\"C:\\\\msys64\\\\ucrt64\\\\bin\\\\g++.exe\" -std=c++20 -O2 -march=native -pipe \"${file}\" -o \"${fileDirname}\\\\${fileBasenameNoExt}.exe\" 2> \"${fileDirname}\\\\error.txt\"",
+        "showElapsed": true
+      },
+      {
+        "match": "\\.py$",
+        "cmd": "python -m py_compile \"${file}\" 2> \"${fileDirname}\\\\error.txt\"",
+        "showElapsed": true
+      },
+      {
+        "match": "\\.java$",
+        "cmd": "javac \"${file}\" 2> \"${fileDirname}\\\\error.txt\"",
+        "showElapsed": true
+      }
+    ]
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 200,
+  "[python]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "autopep8.args": ["--indent-size=2"],
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "security.allowedUNCHosts": ["wsl.localhost"],
+  "python.terminal.useEnvFile": true
+}
